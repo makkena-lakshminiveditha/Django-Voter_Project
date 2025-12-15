@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="left">
+        <img src="https://img.freepik.com/free-vector/tri-color-indian-flag-with-voting-hand_1017-17717.jpg?t=st=1765665311~exp=1765668911~hmac=36646db2802ca99e3ffee428cddc1bd96854ffb0cd9e66325eed23a157f88bb4" alt="Vote India">
+    </div>
+    <div class="right">
+        <h2>Sign Up</h2>
+        {% if message %}
+            <p class="error">{{ message }}</p>
+        {% endif %}
+        <form method="POST">
+            {% csrf_token %}
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="email" name="useremail" placeholder="Email address" required>
+            <input type="password" name="userpassword" placeholder="Password" required>
+            <input type="password" name="reuserpassword" placeholder="conform Password" required>
+            <button type="submit">Sign Up</button>
+        </form>
+        <p class="login-text">
+            Already have an account?
+            <a href="{% url 'login101' %}">Sign in</a>
+        </p>
+    </div>
+</div>
+</body>
+</html>

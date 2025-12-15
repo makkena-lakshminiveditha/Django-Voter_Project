@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Voter Registration</title>
+    <link rel="stylesheet" href="{% static 'CSS/voterform.css' %}">
+</head>
+<body>
+<div class="page">
+    <div class="card">
+        <h2>Voter Form</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% if form.errors %}
+                <div class="error">
+                    {% for field in form %}
+                        {% for error in field.errors %}
+                            <p>{{ error }}</p>
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+            {% endif %}
+            {{ form.as_p }}
+            <button type="submit">CREATE CARD</button>
+        </form>
+    </div>
+    <div class="nav-buttons">
+        <a href="{% url 'voter_table' %}"><button>List Of Voters</button></a>
+        <a href="{% url 'myhomepage' %}"><button>Home</button></a>
+    </div>
+</div>
+</body>
+</html>

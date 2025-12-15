@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url("https://t4.ftcdn.net/jpg/07/39/39/31/360_F_739393131_DWgSAc0EvLdqasgKMGafX0nWMCTGQxdK.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    width: 360px;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+}
+
+.card h2 {
+    text-align: left;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.card p {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.card input,
+.card select,
+.card textarea {
+    width: 100%;
+    padding: 7px;
+    border-radius: 5px;
+    border: 1px solid #cfcfcf;
+    font-size: 14px;
+}
+
+.card textarea {
+    height: 32px;        
+    padding: 6px;
+    resize: none;
+}
+
+.card button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 12px;
+    background: #df14ba;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.card button:hover {
+    background: #0b5ed7;
+}
+
+.error p {
+    color: red;
+    font-size: 12px;
+    margin: 2px 0;
+}
+
+.nav-buttons {
+    margin-top: 15px;
+}
+
+.nav-buttons button {
+    width: 170px;
+    height: 30px;
+    padding: 8px 14px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 5px;
+    background: #0c7beb;
+    color: white;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.nav-buttons button:hover {
+    background: blue;
+}

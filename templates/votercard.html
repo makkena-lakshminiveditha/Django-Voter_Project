@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Voter ID Card</title>
+    <link rel="stylesheet" href="{% static 'CSS/votercard.css' %}">
+</head>
+<body>
+    <div class="card">
+        <div class="header">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Emblem_of_India.svg"
+                 class="logo" alt="India Emblem">
+
+            <div class="title">
+                <h2>Election Commission of India</h2>
+                <p>e-Electors Photo Identity Card</p>
+            </div>
+        </div>
+        <div class="content">
+            <div class="photo">
+                <img src="{{ voter.Photo.url }}" alt="Voter Photo">
+            </div>
+            <div class="details">
+                <p><b>Name:</b> {{ voter.name }}</p>
+                <p><b>Father Name:</b> {{ voter.father_name }}</p>
+                <p><b>Date of Birth:</b> {{ voter.dob }}</p>
+                <p><b>Age:</b> {{ voter.age }}</p>
+                <p><b>Gender:</b> {{ voter.gender }}</p>
+                <p><b>Address:</b> {{ voter.address }}</p>
+                <p class="vid"><b>Voter ID:</b> {{ voter.Voter_id }}</p>
+            </div>
+
+        </div>
+    </div>
+    <div class="main-btn">
+        <a href="{% url 'voter_table' %}"><button>List Of Voters</button></a>
+        <a href="{% url 'myhomepage' %}"><button>Home</button></a>
+        <a href="{% url 'voterform1' %}"><button>Create Voter Id</button></a>
+    </div>
+</body>
+</html>

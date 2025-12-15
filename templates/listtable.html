@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List of Voters</title>
+    <link rel="stylesheet" href="{% static 'CSS/voterlist.css' %}">
+</head>
+<body>
+
+<div class="container">
+
+    <h2 class="title">👤 List of Voters</h2>
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Father Name</th>
+            <th>Gender</th>
+            <th>Date of Birth</th>
+            <th>Address</th>
+            <th>Voter ID</th>
+            <th>Image</th>
+        </tr>
+
+        {% for x in voter %}
+        <tr>
+            <td>{{ x.name }}</td>
+            <td>{{ x.father_name }}</td>
+            <td>{{ x.gender }}</td>
+            <td>{{ x.dob }}</td>
+            <td>{{ x.address }}</td>
+            <td class="vid">{{ x.Voter_id }}</td>
+            <td>
+                <img src="{{ x.Photo.url }}" class="photo">
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <div class="buttons">
+        <a href="{% url 'myhomepage' %}"><button>Home</button></a>
+        <a href="{% url 'voterform1' %}"><button>Create Voter ID</button></a>
+    </div>
+
+</div>
+</body>
+</html>
