@@ -79,21 +79,42 @@ WSGI_APPLICATION = 'Voter_Id.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+# import os
+# if os.environ.get("RENDER"):
+# # Production (Render + Railway MySQL)
+#     DATABASES = {
+#         "default": { 
+#         "ENGINE": "django.db.backends.mysql",
+#         "NAME": os.environ.get("MYSQLDATABASE"),
+#         "USER": os.environ.get("MYSQLUSER"),
+#         "PASSWORD": os.environ.get("MYSQLPASSWORD"),
+#         "HOST": os.environ.get("MYSQLHOST"),
+#         "PORT": os.environ.get("MYSQLPORT", "3306"),
+
+#     }
+
+# }
 import os
 if os.environ.get("RENDER"):
-# Production (Render + Railway MySQL)
+    # ✅ Production (Render)
     DATABASES = {
-        "default": { 
-        "ENGINE": "django.db.backends.mysql",
-        "NAME": os.environ.get("MYSQLDATABASE"),
-        "USER": os.environ.get("MYSQLUSER"),
-        "PASSWORD": os.environ.get("MYSQLPASSWORD"),
-        "HOST": os.environ.get("MYSQLHOST"),
-        "PORT": os.environ.get("MYSQLPORT", "3306"),
-
+        "default": {
+            "ENGINE": "django.db.backends.mysql",
+            "NAME": os.environ.get("MYSQLDATABASE"),
+            "USER": os.environ.get("MYSQLUSER"),
+            "PASSWORD": os.environ.get("MYSQLPASSWORD"),
+            "HOST": os.environ.get("MYSQLHOST"),
+            "PORT": os.environ.get("MYSQLPORT", "3306"),
+        }
     }
-
-}
+else:
+    # ✅ Local development
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": BASE_DIR / "db.sqlite3",
+        }
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators

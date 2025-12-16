@@ -1,0 +1,18 @@
+body{
+    background-image: url("https://www.godigit.com/content/dam/godigit/directportal/en/contenthm/voter-id-in-odisha.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.main{
+    margin-top: 150px;
+    margin-left: 250px;
+}
+button{
+    margin-right: 20px;
+    border-radius: 20px;
+    background-color: azure;
+}
+button:hover {
+    background-color: lightsalmon;
+}
